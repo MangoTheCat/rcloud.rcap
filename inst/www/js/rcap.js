@@ -49,8 +49,17 @@ function main() {
                     window.notebook_result = x;
                     if (!_.isUndefined(x.body)) $("body").append(x.body);
                     if (_.isFunction(x.run)) x.run(getQueryArgs(), function() {});
-                });
+		});
             });
+
+	    // This will load rcloud.rcap
+	    promise = promise.then(function() {
+		return rcloud._ocaps.load_module_package(
+		    "rcloud.rcap",
+		    function() { console.log("LOAD RCAP"); }
+		);
+	    });
+	    
             return true;
         },
         on_data: RCloud.session.on_data,

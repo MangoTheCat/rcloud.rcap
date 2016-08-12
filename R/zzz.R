@@ -30,12 +30,16 @@ rcloud.rcap.caps <- NULL
       getRTime = make_oc(function() { Sys.time() }),
       updateControls = make_oc(updateController),
       updateAllControls = make_oc(updateAllControls),
-      getRCAPVersion = make_oc(getRCAPVersion)
+      getRCAPVersion = make_oc(getRCAPVersion),
+      RCAPinit = make_oc(RCAPinit)
     )
 
     rcloud.rcap.caps$init(ocaps, rcapSessionInfo())
   }
 }
+
+#' @export
+.rcloud.export.ocaps <- function() character()
 
 make_oc <- function(...) {
   do.call(base::`:::`, list("rcloud.support", "make.oc"))(...)
