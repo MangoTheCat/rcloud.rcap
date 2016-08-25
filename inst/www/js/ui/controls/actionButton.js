@@ -16,7 +16,7 @@ define(['rcap/js/ui/controls/gridControl',
                 initialSize: [2, 2],
                 controlProperties: [
                     new TextControlProperty({
-                        uid: 'variable',
+                        uid: 'variablename',
                         label: 'Variable',
                         helpText: 'The variable associated with this control',
                         isRequired: true
