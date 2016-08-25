@@ -3,8 +3,7 @@
 <script type="text/javascript">
 
 	$('#<%=control.id%>').click(function() {
-		var codeToCall = $(this).data('code');
-		RCAP.callFunction(codeToCall);
-	}); 
+		console.log('action button clicked...');
+	});
 
 </script>

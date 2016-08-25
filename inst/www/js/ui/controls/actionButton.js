@@ -1,8 +1,7 @@
 define(['rcap/js/ui/controls/gridControl',
     'rcap/js/ui/controls/properties/textControlProperty',
-    'rcap/js/ui/controls/properties/autocompleteControlProperty',
     'text!controlTemplates/actionButton.tpl'
-], function(GridControl, TextControlProperty, AutocompleteControlProperty, tpl) {
+], function(GridControl, TextControlProperty, tpl) {
 
     'use strict';
 
@@ -15,10 +14,10 @@ define(['rcap/js/ui/controls/gridControl',
                 icon: 'exclamation-sign',
                 initialSize: [2, 2],
                 controlProperties: [
-                    new AutocompleteControlProperty({
-                        uid: 'code',
-                        label: 'R Function',
-                        helpText: 'R Function for this control.',
+                    new TextControlProperty({
+                        uid: 'variable',
+                        label: 'Variable',
+                        helpText: 'The variable associated with this control',
                         isRequired: true
                     }),
                     new TextControlProperty({
