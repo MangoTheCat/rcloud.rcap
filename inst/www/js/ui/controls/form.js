@@ -153,11 +153,9 @@ define(['rcap/js/ui/controls/gridControl',
                         plotSizes : plotSizes
                     };
 
-                    ///////////////////////////////////////////////////////
                     var dataToSubmit = JSON.stringify(data);
                     rcapLogger.log('Submitting data: ', dataToSubmit);
                     window.RCAP.updateControls(dataToSubmit);
-                    ///////////////////////////////////////////////////////
                 }
 
             };
