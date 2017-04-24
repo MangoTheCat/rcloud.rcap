@@ -49,7 +49,7 @@ define(['rcap/js/ui/controls/gridControl', 'rcap/js/ui/properties/textProperty',
 						uid: 'linkUrl',
 						label : 'Link URL',
 						defaultValue : '',
-						helpText : 'The URL where you go if you click on the image',
+            helpText : 'The URL where you go if you click on the image; use #page to go to another page',
 						isRequired: false
 					}),
 					new DropdownProperty({
