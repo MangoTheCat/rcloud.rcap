@@ -1,2 +1,17 @@
-<div data-imgsrc="<%=control.controlProperties[0].value%>" style="background-image:url(<%=control.controlProperties[0].value%>);width:100%;height:100%;<%=control.controlProperties[1].value%>">
+<% if(control.getPropertyValue('linkUrl')) { %>
+  <a href="<%=control.getPropertyValue('linkUrl')%>" <%= control.getPropertyValue('linkUrlTarget') === 'new' ? ' target="_blank"' : '' %>>
+<% } %>
+
+<% if(isDesignTime && control.getPropertyValue('linkUrl')) { %>
+  <div class="link-details">
+    <i class="icon-link" title="<%=control.getPropertyValue('linkUrl')%>" /><span><%=control.getPropertyValue('linkUrl')%></span>
+  </div>
+<% } %>
+
+<div data-imgsrc="<%=control.getPropertyValue('imagesource')%>"
+     style="background-image:url(<%=control.getPropertyValue('imagesource')%>);width:100%;height:100%;<%=control.getPropertyValue('imageLayout')%>">
 </div>
+
+<% if(control.getPropertyValue('linkUrl')) { %>
+  </a>
+<% } %>

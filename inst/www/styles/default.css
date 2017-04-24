@@ -2665,6 +2665,17 @@ table.dataTable td {
       background-color: transparent;
       margin-top: 10px;
       margin-bottom: 20px; }
+  #rcap-designer .configure .link-details {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: black;
+    color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px; }
+    #rcap-designer .configure .link-details i {
+      margin-right: 7px; }
   #rcap-designer .configure p {
     font-size: 115%;
     margin-bottom: 0;

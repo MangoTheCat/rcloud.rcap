@@ -753,6 +753,21 @@
         }
     }
     .configure {
+        .link-details {
+          // shown for a subset of controls that allow a click/go link:
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background: black;
+          color: #eee;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 12px;
+
+          i {
+            margin-right: 7px;
+          }
+        }
         p {
             font-size: 115%;
             margin-bottom: 0;

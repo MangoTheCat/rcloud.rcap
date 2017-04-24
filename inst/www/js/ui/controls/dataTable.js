@@ -1,4 +1,4 @@
-define(['rcap/js/ui/controls/gridControl', 
+define(['rcap/js/ui/controls/gridControl',
     'rcap/js/ui/properties/textProperty',
     'rcap/js/ui/properties/autocompleteProperty',
     'rcap/js/ui/properties/dropdownProperty',
@@ -52,7 +52,7 @@ define(['rcap/js/ui/controls/gridControl',
                     }),
                     new DropdownProperty({
                         uid: 'showPaging',
-                        label: 'Show paging', 
+                        label: 'Show paging',
                         isRequired: true,
                         availableOptions: [{
                             text: 'Yes',
@@ -67,7 +67,7 @@ define(['rcap/js/ui/controls/gridControl',
                     }),
                     new DropdownProperty({
                         uid: 'showSearch',
-                        label: 'Show search', 
+                        label: 'Show search',
                         isRequired: true,
                         availableOptions: [{
                             text: 'Yes',
@@ -82,7 +82,7 @@ define(['rcap/js/ui/controls/gridControl',
                     }),
                     new DropdownProperty({
                         uid: 'showInfo',
-                        label: 'Show info', 
+                        label: 'Show info',
                         isRequired: true,
                         availableOptions: [{
                             text: 'Yes',
@@ -97,7 +97,7 @@ define(['rcap/js/ui/controls/gridControl',
                     }),
                     new DropdownProperty({
                         uid: 'downloadAsCsv',
-                        label: 'Download as CSV', 
+                        label: 'Download as CSV',
                         isRequired: true,
                         availableOptions: [{
                             text: 'Yes',
@@ -167,18 +167,18 @@ define(['rcap/js/ui/controls/gridControl',
                 var dt = $('#' + controlId).dataTable().api();
                 dt.destroy();
                 $('#' + controlId).empty();
-            } 
+            }
 
             var controlData = $('#' + controlId).data();
-            
+
             var dtProperties = {
-                dom: 'Blfrtip', 
+                dom: 'Blfrtip',
                 data:  result.data,
-                columns: result.columns.map(function(col) { 
-                    return { 
-                        data: col.replace(/\./g,'\\.'), // escape '.' for datatables 
-                        title: col 
-                    }; 
+                columns: result.columns.map(function(col) {
+                    return {
+                        data: col.replace(/\./g,'\\.'), // escape '.' for datatables
+                        title: col
+                    };
                 })
             };
 
@@ -187,7 +187,7 @@ define(['rcap/js/ui/controls/gridControl',
             result.options.datatables.columnDefs = _.flatten(result.options.datatables.columnDefs);
             var cellDefs = result.options.datatables.cellDefs[0];
             delete result.options.datatables.cellDefs;
-            $.extend(true, dtProperties, 
+            $.extend(true, dtProperties,
                 result.options.datatables);
 
             // sparklines stuff
@@ -196,9 +196,9 @@ define(['rcap/js/ui/controls/gridControl',
             var additionalColDefs = translatedOptions.columnDefs;
             dtProperties.columnDefs = dtProperties.columnDefs.concat(additionalColDefs);
             dtProperties.fnDrawCallback = translatedOptions.fnDrawCallback;
-            
+
             // pass in options from form
-            $.extend(true, dtProperties, 
+            $.extend(true, dtProperties,
                 {
                     info: controlData.info,
                     searching: controlData.searching,
@@ -218,7 +218,7 @@ define(['rcap/js/ui/controls/gridControl',
                 });
             };
             $('#' + controlId).DataTable(dtProperties);
-            
+
             // data table colors
             var tableid = result.options.datatables.tableid;
             $(tableid).remove();
